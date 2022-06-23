@@ -1,0 +1,119 @@
+<div class="content">
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <h2> Programme jeune entrepreneur</h2>
+        <p style="text-align:center;">
+            L'objectif général du <strong>Programme jeune entrepreneur</strong> est d’offrir aux jeunes ruraux des possibilités de se construire leurs moyens d’existence économiques grâce à l’entrepreneuriat ou à l’emploi dans le secteur rural, ce qui les incitera à y travailler, contribuera à la transformation durable du monde rural et favorisera l’émergence d’une nouvelle génération de jeunes agriculteurs,
+            entrepreneurs agricoles et acteurs des filières d’approvisionnement rurales.
+
+        </p>
+
+        <div class="row justify-content-center">
+          <div class="row">
+            <div class="col-md-5">
+              <div class="contact-wrap w-100 p-md-5 p-4">
+                <h3 class="heading mb-4">Cher futur Entrepreneur</h3>
+              <p>
+                Soucrivez au programme jeune entrepreneur avec <strong>14$</strong> et bénéficiez d'une mesure de <strong>Soutien pour un travail autonome</strong>,
+                <strong>d'une formation et atélier en entreprenariat. </strong>
+              </p>
+              </div>
+
+              <p><img src="https://www.maddyness.com/app/uploads/2015/04/entrepreneur-etudiant.jpg" alt="Image" class="img-fluid"></p>
+            </div>
+            <div class="col-md-7 col-lg-7">
+              <div class="contact-wrap w-100 p-md-5 p-4">
+                <h3 class="mb-4">Inscrivez-vous</h3>
+                <div id="form-message-warning" *ngIf="erreur" class="mb-4 text-danger">
+                  {{message}}
+                </div>
+                <div id="form-message-success" *ngIf="reussi" class="mb-4 text-success">
+                  {{message}}
+                </div>
+                <form (ngSubmit)="creationEntrepreneur()" class="contactForm">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="nom">Nom </label>
+                        <input type="text" [(ngModel)]="entrepreneur.nomcomplet" class="form-control" name="nom"
+                         placeholder="Nom" required="true">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="telephone">Téléphone</label>
+                        <input type="number" class="form-control" [(ngModel)]="entrepreneur.telephone"
+                         name="telephone"
+                         placeholder="+243 81 65 382" required >
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="email">Adresse mail</label>
+                        <input type="email" [(ngModel)]="entrepreneur.mail" class="form-control"
+                         name="mail" id="mail"
+                         placeholder="roberts@buania.com">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="sexe">Sexe</label>
+                        <select class="form-control" [(ngModel)]="entrepreneur.sexe" name="sexe" >
+                          <option value="homme">homme</option>
+                          <option value="femme">femme</option>
+                        </select>
+                      </div>
+                    </div>
+                     <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="label" for="adresse">Adresse physique</label>
+                        <input type="text" [(ngModel)]="entrepreneur.adresse" required class="form-control" name="adresse"
+                         placeholder="Adresse physique">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="label" for="devise">Devise</label>
+                        <select class="form-control" [(ngModel)]="entrepreneur.devise" name="USD" >
+                          <option value="USD">USD</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="label" for="montant">Montant</label>
+                        <input type="number" disabled class="form-control" name="mail" value="14"
+                         placeholder="14$">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="label" for="montant">Confirmation Par</label>
+                        <select class="form-control" [(ngModel)]="confirmation" name="confirmation" >
+                          <option value="sms">SMS</option>
+                          <option value="whatsApp">WhatsApp</option>
+                          <option value="mail">Mail</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                      <div class="form-group" style="display:flex ;justify-content:center ;align-items: center;">
+                        <input type="submit" value="S'inscrire" class="btn btn-primary">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,89 @@
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+
+    <div class="" >
+
+    <p style="font-size:1rem ;">
+      En payant sur ce site, afin de suivre <strong>KAYEMBE LA REVANCHE</strong>,
+      En Achetant votre billet en toute tranquilité, un lien vous sera envoyé via mail ou téléphone afin
+       de suivre le retour de <strong>KAYEMBE LE TENACE</strong>
+    </p>
+    <div class="btn btn-suucces">
+      <a style="font-size:1.5rem ;" href="https://www.kayembeletenace.com/"><strong>Bande d'annonce</strong></a>
+    </div>
+    </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="wrapper">
+
+          <div class="row no-gutters">
+            <div class="col-md-5 d-flex align-items-stretch">
+              <div class="info-wrap w-100 p-5 img" style="background-image: url(../../../../assets/im/kay-1.png);">
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="contact-wrap w-100 p-md-5 p-4">
+                <h3 class="mb-4">
+                </h3>
+                <div id="form-message-warning" class="mb-4"></div>
+                <div id="form-message-success" class="mb-4">
+
+                </div>
+                <form (ngSubmit)="genererCode()"   class="contactForm">
+                  <div class=""></div>
+                  <div class="row">
+                    <div class="col-12">
+                      <h3>Achetez votre Billet</h3>
+                    </div>
+                    <div class="col-md-6">
+
+                      <div class="form-group">
+                        <label class="label" for="name">Votre Nom</label>
+                        <input type="text" [(ngModel)]="client.nomcomplet" class="form-control" name="nom" id="nom"
+                         placeholder="Nom ">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="email">Adresse Mail</label>
+                        <input type="email" [(ngModel)]="client.mail" class="form-control" name="email"
+                         id="email" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="telephone">Téléphone</label>
+                        <input type="number" class="form-control"
+                        name="telephone" [(ngModel)]="client.telephone" placeholder="Téléphone">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="sexe">Sexe</label>
+                        <select class="form-control" [(ngModel)]="client.sexe" name="sexe" >
+                          <option value="homme">homme</option>
+                          <option value="femme">femme</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group" style="display:flex ;justify-content:center ;align-items: center;">
+                        <input type="submit" value="Acheter" class="btn btn-primary">
+
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -15,7 +15,7 @@ import { Influenceur } from '../models/influenceur.model';
 })
 export class KayService {
 
-  private urlServeur="http://localhost:8181/dash/kay"
+  private urlServeur="https://accessjob.online/dash/kay"
   constructor(private httpClient:HttpClient) { }
 
   getAllClients(){

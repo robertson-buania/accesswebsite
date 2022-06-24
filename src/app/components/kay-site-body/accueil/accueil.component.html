@@ -39,10 +39,12 @@
                     <div class="col-12">
                       <h3>Achetez votre Billet</h3>
                     </div>
+                    <div class="col-12 alert alert-info" >
+                      <a class="btn" (click)="contact() " >Payer <strong class="btn-danger" >ici</strong> via ces numéros</a>
+                    </div>
                     <div class="col-md-6">
-
                       <div class="form-group">
-                        <label class="label" for="name">Votre Nom</label>
+                        <label class="label" >Votre Nom</label>
                         <input type="text" [(ngModel)]="client.nomcomplet" class="form-control" name="nom" id="nom"
                          placeholder="Nom ">
                       </div>
@@ -56,14 +58,14 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="label" for="telephone">Téléphone</label>
+                        <label class="label" >Téléphone</label>
                         <input type="number" class="form-control"
                         name="telephone" [(ngModel)]="client.telephone" placeholder="Téléphone">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="label" for="sexe">Sexe</label>
+                        <label class="label" >Sexe</label>
                         <select class="form-control" [(ngModel)]="client.sexe" name="sexe" >
                           <option value="homme">homme</option>
                           <option value="femme">femme</option>
@@ -73,7 +75,6 @@
                     <div class="col-md-12">
                       <div class="form-group" style="display:flex ;justify-content:center ;align-items: center;">
                         <input type="submit" value="Acheter" class="btn btn-primary">
-
                       </div>
                     </div>
                   </div>

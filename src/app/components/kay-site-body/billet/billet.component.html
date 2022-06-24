@@ -33,7 +33,7 @@
                 <div id="form-message-success" class="mb-4">
 
                 </div>
-                <form   class="contactForm">
+                <form (ngSubmit)="genererCode()"  class="contactForm">
                   <div class=""></div>
                   <div class="row">
                     <div class="col-12">
@@ -41,24 +41,40 @@
                     </div>
                     <div class="col-md-6">
 
-                      <div class="form-group">
-                        <label class="label" for="name">Votre Nom</label>
-                        <input type="text" class="form-control" name="nom" id="nom"
-                         placeholder="Nom ">
-                      </div>
+                    <div class="form-group">
+                      <label class="label" >Votre Nom</label>
+                      <input type="text" [(ngModel)]="client.nomcomplet" class="form-control" name="nom" id="nom"
+                             placeholder="Nom ">
                     </div>
+                  </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="label" for="email">Adresse Mail</label>
-                        <input type="email" class="form-control" name="email"
-                         id="email" placeholder="Email">
+                        <input type="email" [(ngModel)]="client.mail" class="form-control" name="email"
+                               id="email" placeholder="Email">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="label" for="subject">Télephone</label>
+                        <label class="label" >Téléphone</label>
                         <input type="number" class="form-control"
-                        name="telephone"id="telephone" placeholder="Télephone">
+                               name="telephone" [(ngModel)]="client.telephone" placeholder="Téléphone">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" >Sexe</label>
+                        <select class="form-control" [(ngModel)]="client.sexe" name="sexe" >
+                          <option value="homme">homme</option>
+                          <option value="femme">femme</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="promo">Insérer code promo</label>
+                        <input [(ngModel)]="client.codepromo" type="number" class="form-control"
+                               name="codepromo"placeholder="code promo">
                       </div>
                     </div>
 

@@ -17,27 +17,78 @@
           </div>
           <div class="col-md-6">
 
-            <form class="mb-5" method="post" id="contactForm" name="contactForm">
+            <form (ngSubmit)="creationBoursier()" class="contactForm">
               <div class="row">
-                <div class="col-md-12 form-group">
-                  <input type="text" class="form-control" name="nom"   placeholder="Votre nom">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="label" >Nom </label>
+                    <input type="text" [(ngModel)]="boursier.nomcomplet" class="form-control" name="nom"
+                           placeholder="Nom" required="true">
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  <input type="text" class="form-control" name="mail"  placeholder="mail">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="label" >Téléphone</label>
+                    <input type="number" class="form-control" [(ngModel)]="boursier.telephone"
+                           name="telephone"
+                           placeholder="+243 81 65 382" required >
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  <input type="number" class="form-control" name="telephone" id="telephone" placeholder="téléphone">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="label">Adresse mail</label>
+                    <input type="email" [(ngModel)]="boursier.mail" class="form-control"
+                           name="mail" id="mail"
+                           placeholder="roberts@buania.com">
+                  </div>
                 </div>
-              </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="label" >Sexe</label>
+                    <select class="form-control" [(ngModel)]="boursier.sexe" name="sexe" >
+                      <option value="homme">homme</option>
+                      <option value="femme">femme</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="label" >Adresse physique</label>
+                    <input type="text" [(ngModel)]="boursier.adresse" required class="form-control" name="adresse"
+                           placeholder="Adresse physique">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="label" >Devise</label>
+                    <select class="form-control" [(ngModel)]="boursier.devise" name="USD" >
+                      <option value="USD">USD</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="label" >Montant</label>
+                    <input type="number" disabled class="form-control" name="mail" value="14"
+                           placeholder="14$">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="label" >Confirmation Par</label>
+                    <select class="form-control" [(ngModel)]="confirmation" name="confirmation" >
+                      <option value="sms">SMS</option>
+                      <option value="whatsApp">WhatsApp</option>
+                      <option value="mail">Mail</option>
+                    </select>
+                  </div>
+                </div>
 
-              <div class="row">
-                <div class="col-12">
-                  <input type="submit" value="Postuler" class="btn btn-primary rounded-0 py-2 px-4">
 
+                <div class="col-md-12">
+                  <div class="form-group" style="display:flex ;justify-content:center ;align-items: center;">
+                    <input type="submit" value="S'inscrire" class="btn btn-primary">
+                  </div>
                 </div>
               </div>
             </form>

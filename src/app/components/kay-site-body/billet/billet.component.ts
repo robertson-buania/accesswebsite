@@ -23,7 +23,7 @@ export class BilletComponent implements OnInit {
 
   }
   genererCode(){
-    console.log(this.client)
+    //console.log(this.client)
     if( this.client.nomcomplet!=null && this.client.telephone!=null &&
       this.client.nomcomplet.trim().length!=0 && this.client.telephone.length!=0
       ){

@@ -30,7 +30,7 @@ export class AccueilComponent implements OnInit {
       ){
         this.kayService.saveClientBynameAndTel(this.client)
           .subscribe((data)=>{
-            alert("Client enregistré avec success !"+this.client.nomcomplet)
+            alert(this.client.nomcomplet+ " a été  enregistré avec success ! Le paiment mobile peut s'effectuer sur ces numéros en bas")
             //console.log(data)
           })
       }else{
@@ -39,4 +39,7 @@ export class AccueilComponent implements OnInit {
 
   }
 
+  contact(){
+    alert("+243 81 49 98 464 : +243 97 73 82 309 :")
+  }
 }

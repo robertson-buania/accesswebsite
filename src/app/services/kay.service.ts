@@ -9,13 +9,14 @@ import { Codekay } from './../models/codekay.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Influenceur } from '../models/influenceur.model';
+import {Boursier} from "../models/boursier.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class KayService {
-
-  private urlServeur="https://accessjob.online/dash/kay"
+//https://accessjob.online
+  private urlServeur="http://localhost:8181/website/kay"
   constructor(private httpClient:HttpClient) { }
 
   getAllClients(){
@@ -70,10 +71,10 @@ export class KayService {
   saveEntrepreneur(entrepreneur:Entrepreneur ){
     return this.httpClient.post<Entrepreneur>(`${this.urlServeur}/saveentrepreneur`,entrepreneur);
   }
-
-  deleteEntrepreneur(idEntrepreneur:number ){
-    return this.httpClient.post<Entrepreneur>(`${this.urlServeur}/deleteentrepreneur`,idEntrepreneur);
+  saveBoursier(boursier:Boursier ){
+    return this.httpClient.post<Boursier>(`${this.urlServeur}/saveboursier`,boursier);
   }
+
 
    /*
   Imitateur

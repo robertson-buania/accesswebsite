@@ -36,14 +36,14 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="label" for="nom">Nom </label>
+                        <label class="label" >Nom </label>
                         <input type="text" [(ngModel)]="entrepreneur.nomcomplet" class="form-control" name="nom"
                          placeholder="Nom" required="true">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="label" for="telephone">Téléphone</label>
+                        <label class="label" >Téléphone</label>
                         <input type="number" class="form-control" [(ngModel)]="entrepreneur.telephone"
                          name="telephone"
                          placeholder="+243 81 65 382" required >
@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="label" for="email">Adresse mail</label>
+                        <label class="label">Adresse mail</label>
                         <input type="email" [(ngModel)]="entrepreneur.mail" class="form-control"
                          name="mail" id="mail"
                          placeholder="roberts@buania.com">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="label" for="sexe">Sexe</label>
+                        <label class="label" >Sexe</label>
                         <select class="form-control" [(ngModel)]="entrepreneur.sexe" name="sexe" >
                           <option value="homme">homme</option>
                           <option value="femme">femme</option>
@@ -68,14 +68,14 @@
                     </div>
                      <div class="col-md-12">
                       <div class="form-group">
-                        <label class="label" for="adresse">Adresse physique</label>
+                        <label class="label" >Adresse physique</label>
                         <input type="text" [(ngModel)]="entrepreneur.adresse" required class="form-control" name="adresse"
                          placeholder="Adresse physique">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label class="label" for="devise">Devise</label>
+                        <label class="label" >Devise</label>
                         <select class="form-control" [(ngModel)]="entrepreneur.devise" name="USD" >
                           <option value="USD">USD</option>
                         </select>
@@ -83,14 +83,14 @@
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label class="label" for="montant">Montant</label>
+                        <label class="label" >Montant</label>
                         <input type="number" disabled class="form-control" name="mail" value="14"
                          placeholder="14$">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label class="label" for="montant">Confirmation Par</label>
+                        <label class="label" >Confirmation Par</label>
                         <select class="form-control" [(ngModel)]="confirmation" name="confirmation" >
                           <option value="sms">SMS</option>
                           <option value="whatsApp">WhatsApp</option>

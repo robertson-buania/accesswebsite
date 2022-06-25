@@ -10,13 +10,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Influenceur } from '../models/influenceur.model';
 import {Boursier} from "../models/boursier.model";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KayService {
 //https://accessjob.online
-  private urlServeur="http://localhost:8181/website/kay"
+  private urlServeur=environment.urlServeur
   constructor(private httpClient:HttpClient) { }
 
   getAllClients(){

@@ -6,12 +6,14 @@ import { BilletComponent } from './components/kay-site-body/billet/billet.compon
 import { AccueilComponent } from './components/kay-site-body/accueil/accueil.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InfluenceurComponent } from './components/kay-site-body/influenceur/influenceur.component';
 
 const routes: Routes = [
 
   {path:"",component:AccueilComponent},
   {path:"accueil",component:AccueilComponent},
   {path:"billet",component:BilletComponent},
+  {path:"influenceur",component:InfluenceurComponent},
   {path:"imitateur",component:ImitateurComponent},
   {path:"dessinateur",component:DessinateurComponent},
   {path:"boursier",component:BoursierComponent},

@@ -9,56 +9,78 @@
       <div class="col-md-12">
         <div class="wrapper">
           <div class="row no-gutters">
-            <div class="col-md-9 col-lg-7">
+            <div class="col-md-7 col-lg-7">
               <div class="contact-wrap w-100 p-md-5 p-4">
                 <h3 class="mb-4">Inscrivez-vous</h3>
-                <div id="form-message-warning" class="mb-4"></div>
-                <div id="form-message-success" class="mb-4">
-                  L'inscription a reussie, veuillez consulter votre adresse mail
-                </div>
-                <form class="contactForm">
+                <p class="alert alert-danger" *ngIf="erreur" class="mb-4 text-danger">
+                  {{errormessage}}
+                </p>
+                <p class="alert alert-success" *ngIf="reussi" class="mb-4 text-success">
+                  {{message}}
+                </p>
+                <form (ngSubmit)="creationImitateur()" class="contactForm">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="label" >Nom </label>
-                        <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label class="label" >Adresse mail</label>
-                        <input type="email" class="form-control" name="mail" id="mail"
-                         placeholder="mail">
+                        <input type="text" [(ngModel)]="imitateur.nomcomplet" class="form-control" name="nom"
+                         placeholder="Nom" required="true">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="label" >Téléphone</label>
-                        <input type="number" class="form-control" name="telephone"
-                         placeholder="+243 81 65 382">
-                      </div>
-                    </div>
-                     <div class="col-md-6">
-                      <div class="form-group">
-                        <label class="label" >Mail</label>
-                        <input type="email" class="form-control" name="mail"
-                         placeholder="mail">
+                        <input type="number" class="form-control" [(ngModel)]="imitateur.telephone"
+                         name="telephone"
+                         placeholder="+243 81 65 382" required >
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="label" >Devise</label>
-                        <select class="form-control" name="sexe" id="sexe">
-                          <option value="USD">USD</option>
-                          <option value="CDF">CDF</option>
+                        <label class="label">Adresse mail</label>
+                        <input type="email" [(ngModel)]="imitateur.mail" class="form-control"
+                         name="mail" id="mail"
+                         placeholder="roberts@buania.com">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" >Sexe</label>
+                        <select class="form-control" [(ngModel)]="imitateur.sexe" name="sexe" >
+                          <option value="homme">homme</option>
+                          <option value="femme">femme</option>
                         </select>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                     <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="label" >Adresse physique</label>
+                        <input type="text" [(ngModel)]="imitateur.adresse" required class="form-control" name="adresse"
+                         placeholder="Adresse physique">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="label" >Devise</label>
+                        <select class="form-control" [(ngModel)]="imitateur.devise" name="USD" >
+                          <option value="USD">USD</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
                       <div class="form-group">
                         <label class="label" >Montant</label>
-                        <input type="number" disabled class="form-control" name="mail" value="28000|14$"
+                        <input type="number" disabled class="form-control" name="mail" value="14"
                          placeholder="14$">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="label" >Confirmation Par</label>
+                        <select class="form-control" [(ngModel)]="confirmation" name="confirmation" >
+                          <option value="sms">SMS</option>
+                          <option value="mail">Mail</option>
+                        </select>
                       </div>
                     </div>
 
@@ -70,10 +92,11 @@
                     </div>
                   </div>
                 </form>
+
               </div>
             </div>
             <div class="col-md-5 d-flex align-items-stretch">
-              <div class="info-wrap w-100 p-5 img" style="background-image: url(../../../../assets/im/img-3.jpg);">
+              <div class="info-wrap w-100 p-5 img" style="background-image: url(../../../../assets/im/img.jpeg);">
               </div>
             </div>
           </div>

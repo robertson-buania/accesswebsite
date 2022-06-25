@@ -1,0 +1,123 @@
+<section id="about" class="about-mf sect-pt4 route mt-5">
+  <div class="container">
+
+    <section id="contact" *ngIf="!influenceur" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-mf">
+              <div id="contact" class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        Connexion comme influenceur
+                      </h5>
+                    </div>
+                    <div>
+                      <form (ngSubmit)="findInfluenceur()" class="php-email-form">
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                              <input type="text" name="nom" [(ngModel)]="nom" class="form-control"
+                              placeholder="nom reservé" required>
+                            </div>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                              <input type="text" class="form-control" [(ngModel)]="reserve" name="codepromo" placeholder="code promo" required>
+                            </div>
+                          </div>
+
+                          <div *ngIf="message!=''" class="col-md-12 text-center my-3">
+
+                            <div class="error-message">
+                              {{message}}
+                            </div>
+                          </div>
+                          <div *ngIf="clicked"  class="spinner-border text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-success">Connexion</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row" *ngIf="influenceur">
+      <div class="col-sm-12">
+        <div class="box-shadow-full">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-sm-6 col-md-5">
+                  <div class="about-img">
+                    <img style="width:200px" src="https://www.selldorado.com/wp-content/uploads/2020/03/Influence_accordeon.png" class="img-fluid rounded b-shadow-a" alt="">
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-7">
+                  <div class="about-info">
+                    <p><span class="title-s">Nom: </span> <span><strong> {{influenceur.nomcomplet }}</strong></span></p>
+                    <p><span class="title-s">Réseaux: </span> <span><strong> {{ influenceur.nomreseaux}}</strong></span></p>
+                    <p><span class="title-s">Email: </span> <span><strong> {{influenceur.mail}}</strong></span></p>
+                    <p><span class="title-s">Téléphone: </span> <span><strong> {{influenceur.telephone }}</strong></span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-mf">
+                <p class="title-s">Performance</p>
+                <h4>Sode Actuel</h4>
+                <div class=" text-align-center alert alert-secondary">
+                  <span class="m-3 p-4" > <strong>{{influenceur.solde}}</strong> </span>
+                </div>
+
+                <h4>nombre d'utilisateurs du code promo</h4>
+                <div class=" text-align-center alert alert-secondary">
+                  <span class="m-3 p-4" > <strong>{{influenceur.clients?.length}}</strong> </span>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="about-me pt-4 pt-md-0">
+                <div class="title-box-2">
+                  <h3 class="title-left">
+                    Influencés
+                  </h3>
+                </div>
+                <div class="container">
+
+                  <table class="table">
+                    <thead>
+                     <tr>
+                      <th>N°</th> <th>Nom </th><th>Code promo </th>
+                     </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let client of influenceur.clients;let i=index;" >
+                        <td> {{i }} </td>
+                        <td> {{client.nomcomplet}} </td>
+                        <td> {{client.codepromo}} </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

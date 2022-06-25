@@ -24,6 +24,7 @@ export class EntrepreneurComponent implements OnInit {
     sexe:"homme",
     status:false
   }
+  errormessage=""
   confirmation="sms"
   messageForm:string|null=null
   okEntrepreneurSate:KayState <Entrepreneur> |null=null
@@ -34,7 +35,7 @@ export class EntrepreneurComponent implements OnInit {
 
 
   creationEntrepreneur(){
-    console.log(this.entrepreneur)
+
     if( this.entrepreneur.nomcomplet!=null &&this.entrepreneur.nomcomplet.trim().length!=0 &&
      this.entrepreneur.telephone!=null && this.entrepreneur.telephone.length!=0&&
      this.entrepreneur.adresse!=null && this.entrepreneur.adresse.length!=0
@@ -43,23 +44,27 @@ export class EntrepreneurComponent implements OnInit {
      this.kayService.saveEntrepreneur(this.entrepreneur)
      .subscribe({
       next: (v) => {
-        this.message="L'inscription a reussie, veuillez consulter votre adresse mail"
+
         this.initEntrepreneur();
+        alert("Vous etes enregistré avec success !"+v.nomcomplet + "un mail ou sms vous sera envoyé ")
+        this.reussi=true
+        this.erreur=false
         setTimeout(()=>{
-          this.message=null,
-          this.reussi=false
+          this.message=null
+          this.erreur=false
         },9000)
       },
       error: (e) => {
         this.erreur=true
-        this.message="Votre inscription a rencontré un problème, veillez réessayer plus tard !"
+        this.reussi=false
+        this.errormessage="Votre inscription a rencontré un problème, veillez réessayer plus tard !"
         setTimeout(()=>{
           this.message=null,
           this.reussi=false
           this.erreur=false
         },9000)
       },
-      complete: () => {this.message="Requete envoyé"}
+      complete: () => {this.message="L'inscription a reussie, veuillez consulter votre adresse mail"}
   })
       }else{
         this.messageForm="Informations incorrectes, éviter les champs vides"

@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KaySiteNavComponent implements OnInit {
 
-  activeAccueil=false
+  activeAccueil=true
   activeDessinateur=false
   activeImitateu=false
   activeBillet=false
+  activeInfluenceur=false
   activeBourse=false
   activeEntrepreneur=false
   constructor() { }
@@ -23,6 +24,7 @@ export class KaySiteNavComponent implements OnInit {
     this.activeDessinateur=false
     this. activeImitateu=false
     this. activeBillet=false
+    this.activeInfluenceur=false
     this.activeBourse=false
     this.activeEntrepreneur=false
   }
@@ -32,12 +34,14 @@ export class KaySiteNavComponent implements OnInit {
     this. activeImitateu=false
     this. activeBillet=true
     this.activeBourse=false
+    this.activeInfluenceur=false
     this.activeEntrepreneur=false
   }
   entrepreneur(){
     this.activeAccueil=false;
     this.activeDessinateur=false
     this. activeImitateu=false
+    this.activeInfluenceur=false
     this. activeBillet=false
     this.activeBourse=false
     this.activeEntrepreneur=true
@@ -49,12 +53,14 @@ export class KaySiteNavComponent implements OnInit {
     this. activeBillet=false
     this.activeBourse=true
     this.activeEntrepreneur=false
+    this.activeInfluenceur=false
   }
   imitateur(){
     this.activeAccueil=false;
     this.activeDessinateur=false
     this. activeImitateu=true
     this. activeBillet=false
+    this.activeInfluenceur=false
     this.activeBourse=false
     this.activeEntrepreneur=false
   }
@@ -65,6 +71,17 @@ export class KaySiteNavComponent implements OnInit {
     this. activeBillet=false
     this.activeBourse=false
     this.activeEntrepreneur=false
+
+    this.activeInfluenceur=false
+  }
+  influenceur(){
+    this.activeAccueil=false;
+    this.activeDessinateur=false
+    this. activeImitateu=false
+    this. activeBillet=false
+    this.activeBourse=false
+    this.activeEntrepreneur=false
+    this.activeInfluenceur=true
   }
 
 }

@@ -9,18 +9,23 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto mr-md-3">
             <li class="nav-item " (click)="accueil() " ><a  routerLink="accueil" class="nav-link">Accueil</a></li>
-            <li class="nav-item" (click)="dessinateur()"><a routerLink="dessinateur" class="nav-link">Dessinateur</a></li>
-            <li class="nav-item"(click)="imitateur()"><a routerLink="imitateur" class="nav-link">Imitateur</a></li>
-            <li class="nav-item"(click)="bourse()"><a routerLink="boursier" class="nav-link">Bourse</a></li>
+
+            <li class="nav-item"(click)="influenceur()"></li>
             <li class="nav-item"(click)="entrepreneur()"><a routerLink="entrepreneur" class="nav-link">Jeune entrepreneur</a></li>
-            <li (click)="billet()" class="dropdown nav-item d-md-flex align-items-center">
-              <a routerLink="billet"
+            <li class="nav-item"(click)="billet()" ><a routerLink="billet"
+              class="nav-link">Billet </a></li>
+
+            <li (click)="bourse()" class="ml-3 dropdown nav-item d-md-flex align-items-center">
+              <a
               class="dropdown-toggle nav-link d-flex align-items-center
-               justify-content-center icon-cart p-0" id="dropdown04"
-               data-toggle="dropdown" aria-expanded="false">Billet</a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown04">
-                <a routerLink="billet" class="dropdown-item">Acheter son billet</a>
-                <a routerLink="billet" class="dropdown-item">Achat avec code promo</a>
+               justify-content-center p-0" id="dropdown04"
+               data-toggle="dropdown" aria-expanded="false">Programmes KAYEMBE <i class="fa fa-sort-desc" style="font-size:1.2rem;" aria-hidden="true"></i></a>
+              <div class="inf dropdown-menu dropdown-menu-right" aria-labelledby="dropdown04">
+                <a routerLink="boursier" class="dropdown-item">Bourse d'Etudes</a>
+                <a routerLink="imitateur" class="dropdown-item">Concours du meilleur Imitateur</a>
+                <a routerLink="dessinateur" class="dropdown-item">Concours du meilleur Dessinateur</a>
+                <a routerLink="entrepreneur" class="dropdown-item">Jeune entrepreneur</a>
+                <a routerLink="influenceur" class="dropdown-item">Influenceur</a>
 
               </div>
             </li>

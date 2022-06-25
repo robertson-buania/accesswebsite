@@ -3,17 +3,17 @@
     <div class="row justify-content-center">
       <div class="col-md-6 text-center mb-5">
 
-    <div class="" >
+        <div class="" >
 
-    <p style="font-size:1rem ;">
-      En payant sur ce site, afin de suivre KAYEMBE LA REVANCHE,
-      En Achetant votre billet en toute tranquilité, un lien vous sera envoyé via mail ou télépone afin
-        suivrez le retour de KAYEMBE LE TENACE
-    </p>
-    <div class="btn btn-suucces">
-      <a style="font-size:1.5rem ;" href="https://www.kayembeletenace.com/">Bande d'annonce</a>
-    </div>
-    </div>
+          <p style="font-size:1rem ;">
+            En payant sur ce site, afin de suivre KAYEMBE LA REVANCHE,
+            En Achetant votre billet en toute tranquilité, un lien vous sera envoyé via mail ou télépone afin
+              suivrez le retour de KAYEMBE LE TENACE
+          </p>
+          <div class="btn btn-danger">
+            <a style="font-size:1.5rem ; color: white;" href="https://www.kayembeletenace.com/">Bande d'annonce</a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -29,12 +29,15 @@
               <div class="contact-wrap w-100 p-md-5 p-4">
                 <h3 class="mb-4">
                 </h3>
-                <div id="form-message-warning" class="mb-4"></div>
-                <div id="form-message-success" class="mb-4">
-
+                <div class="alert alert-success" *ngIf="success" class="mb-4">
+                  <p style="font-size:1.1rem;" > Vous etes enregistré au nom de :"{{nom}} " contacter ces numéros pour payer via Mobile Money</p>
+                    <div style="display:flex;color:red;flex-direction: column; align-items:center; justify-content:center;" >
+                      <a href="tel:+243 81 49 98 464">+243 81 49 98 464</a>
+                      <a href="tel:+243 97 73 82 309">+243 97 73 82 309</a>
+                    </div>
                 </div>
                 <form (ngSubmit)="genererCode()"  class="contactForm">
-                  <div class=""></div>
+
                   <div class="row">
                     <div class="col-12">
                       <h3>Achatez votre Billet</h3>
@@ -73,8 +76,8 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="promo">Insérer code promo</label>
-                        <input [(ngModel)]="client.codepromo" type="number" class="form-control"
-                               name="codepromo"placeholder="code promo">
+                        <input [(ngModel)]="client.codepromo" type="text" class="form-control"
+                               name="codepromo"placeholder="promo : non obligatoire">
                       </div>
                     </div>
 

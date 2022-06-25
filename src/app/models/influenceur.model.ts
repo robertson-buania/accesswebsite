@@ -14,6 +14,7 @@ export interface Influenceur  {
      nomreseaux:string ;
      sexe:string;
       solde:number;
+      reserve?:string;
       pourcentage:number;
 
       clients?:Client[] ;

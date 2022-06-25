@@ -16,6 +16,7 @@ import { EntrepreneurComponent } from './components/kay-site-body/entrepreneur/e
 import { BoursierComponent } from './components/kay-site-body/boursier/boursier.component';
 import { AccueilComponent } from './components/kay-site-body/accueil/accueil.component';
 import { AproposComponent } from './components/kay-site-body/apropos/apropos.component';
+import { InfluenceurComponent } from './components/kay-site-body/influenceur/influenceur.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AproposComponent } from './components/kay-site-body/apropos/apropos.com
     EntrepreneurComponent,
     BoursierComponent,
     AccueilComponent,
-    AproposComponent
+    AproposComponent,
+    InfluenceurComponent
   ],
   imports: [
     BrowserModule,

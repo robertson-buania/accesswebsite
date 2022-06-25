@@ -26,12 +26,12 @@
             <div class="col-md-7 col-lg-7">
               <div class="contact-wrap w-100 p-md-5 p-4">
                 <h3 class="mb-4">Inscrivez-vous</h3>
-                <div id="form-message-warning" *ngIf="erreur" class="mb-4 text-danger">
+                <p class="alert alert-danger" *ngIf="erreur" class="mb-4 text-danger">
+                  {{errormessage}}
+                </p>
+                <p class="alert alert-success" *ngIf="reussi" class="mb-4 text-success">
                   {{message}}
-                </div>
-                <div id="form-message-success" *ngIf="reussi" class="mb-4 text-success">
-                  {{message}}
-                </div>
+                </p>
                 <form (ngSubmit)="creationEntrepreneur()" class="contactForm">
                   <div class="row">
                     <div class="col-md-6">
@@ -93,7 +93,6 @@
                         <label class="label" >Confirmation Par</label>
                         <select class="form-control" [(ngModel)]="confirmation" name="confirmation" >
                           <option value="sms">SMS</option>
-                          <option value="whatsApp">WhatsApp</option>
                           <option value="mail">Mail</option>
                         </select>
                       </div>

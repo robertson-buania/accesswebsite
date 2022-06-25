@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
+  nom=""
+  success=false
   client:Client={
     nomcomplet:"",
     telephone:"+243",
@@ -18,9 +20,9 @@ export class AccueilComponent implements OnInit {
     sexe:"femme"
 
   }
-  constructor(private kayService:KayService) { }
-
+  constructor(private kayService:KayService){}
   ngOnInit(): void {
+    this.initBillet()
 
   }
   genererCode(){
@@ -30,8 +32,12 @@ export class AccueilComponent implements OnInit {
       ){
         this.kayService.saveClientBynameAndTel(this.client)
           .subscribe((data)=>{
-            alert(this.client.nomcomplet+ " a été  enregistré avec success ! Le paiment mobile peut s'effectuer sur ces numéros en bas")
+            this.nom=data.nomcomplet
+            alert("Client enregistré avec success !"+data.nomcomplet)
             //console.log(data)
+            this.success=true;
+
+            this.initBillet()
           })
       }else{
         alert("Informations incorrectes, éviter les champs vides")
@@ -39,7 +45,15 @@ export class AccueilComponent implements OnInit {
 
   }
 
-  contact(){
-    alert("+243 81 49 98 464 : +243 97 73 82 309 :")
+  initBillet(){
+    this.client={
+      nomcomplet:"",
+      telephone:"+243",
+      date:new Date(),
+      mail:"",
+      editeur:"Website",
+      sexe:"femme"
+
+    }
   }
 }

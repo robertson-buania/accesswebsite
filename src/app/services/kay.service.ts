@@ -107,4 +107,11 @@ export class KayService {
   deleteInfluenceur(idInfluenceur:number ){
     return this.httpClient.post<Influenceur>(`${this.urlServeur}/deleteinfluenceur`,idInfluenceur);
   }
-}
+  findInfluenceur(nom:string,reserve:string){
+    return this.httpClient.post<Influenceur>(`${this.urlServeur}/reserveinfluenceur`, {
+      "nom":nom,
+      "reserve":reserve
+    } );
+
+  }
+  }

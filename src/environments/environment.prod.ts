@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlServeur:"https://www.dashkay.academy.opengroupinnovation.com"
 };

@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   //urlServeur:"http://localhost:8181/website/kay"
-  urlServeur:"http://www.dashkay.academy.opengroupinnovation.com"
-};
+  urlServeur:"https://www.dashkay.academy.opengroupinnovation.com"
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
